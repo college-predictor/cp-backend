@@ -419,17 +419,30 @@ class CollegeService:
             "type": "Public",
             "category": "Engineering",
             "location": {
-                "address": "Sector 22, Academic Road",
-                "city": "Dadri",
-                "state": "Uttar Pradesh",
-                "pincode": "203207",
-                "coordinates": {"lat": 28.567, "lng": 77.553}
+            "address": "Sector 22, Academic Road",
+            "city": "Dadri",
+            "state": "Uttar Pradesh",
+            "pincode": "203207",
+            "coordinates": {"lat": 28.567, "lng": 77.553}
             },
             "contact": {
-                "phone": ["+91-120-1234567", "+91-120-7654321"],
-                "email": ["info@nita.edu.in", "admissions@nita.edu.in"],
-                "website": "https://www.nita.edu.in",
-                "admissionHelpline": "+91-120-1112223"
+            "phone": ["+91-120-1234567", "+91-120-7654321"],
+            "email": ["info@nita.edu.in", "admissions@nita.edu.in"],
+            "website": "https://www.nita.edu.in",
+            "helpline": {
+                    "admission": {
+                    "phone": "+91-120-1112223",
+                    "email": "admissions@nita.edu.in"
+                    },
+                    "scholarships": {
+                    "phone": "+91-120-3334445",
+                    "email": "scholarships@nita.edu.in"
+                    },
+                    "general": {
+                    "phone": "+91-120-4445556",
+                    "email": "info@nita.edu.in"
+                    }
+                }
             }
         }
 
@@ -496,11 +509,13 @@ class CollegeService:
                     "total": "INR 2,85,000 per year"
                 }
             },
-            "phd": {
-                "tuition": "INR 50,000 per year",
-                "hostel": "INR 30,000 per year",
-                "other": "INR 10,000 per year",
-                "total": "INR 90,000 per year"
+            "doctorate": {
+                "PhD": {
+                    "tuition": "INR 50,000 per year",
+                    "hostel": "INR 30,000 per year",
+                    "other": "INR 10,000 per year",
+                    "total": "INR 90,000 per year"
+                }
             }
         }
 
@@ -547,6 +562,14 @@ class CollegeService:
                     "role": "SDE I",
                     "story": "Focused on system design and interned at a startup, gaining real-world experience before final placements."
                 }
+            ],
+            "placementProcess": [
+                { "step": "Pre-Placement Talks", "description": "Companies present their profiles" },
+                { "step": "Resume Shortlisting", "description": "Based on CGPA and skills" },
+                { "step": "Written Test", "description": "Aptitude and technical assessment" },
+                { "step": "Group Discussion", "description": "Communication and teamwork" },
+                { "step": "Interviews", "description": "Technical and HR rounds" },
+                { "step": "Offer Letter", "description": "Final selection and onboarding" }
             ]
         }
 
@@ -590,72 +613,208 @@ class CollegeService:
 
     @staticmethod
     def get_admissions(college_id: int) -> dict:
-        """Get admission information for all programs"""
+        """Get admission information for all programs and methods, with steps, deadlines, documents, and eligibility"""
         return {
-            "overview": "Admissions are based on merit and entrance exams. Each program has specific eligibility criteria and required documents.",
-            "programs": {
-                "B.Tech": {
-                    "importantDates": [
-                        {"event": "Application Start", "startDate": "2025-02-15", "endDate": "2025-04-30", "status": "Closed"},
-                        {"event": "JEE Main Exam", "startDate": "2025-05-20", "endDate": "2025-05-20", "status": "Closed"},
-                        {"event": "Counseling", "startDate": "2025-06-15", "endDate": "2025-07-10", "status": "Ongoing"}
-                    ],
-                    "eligibility": ["Class 12 with PCM", "JEE Main score", "Minimum 75% aggregate"],
-                    "requiredDocuments": [
-                        "Photo ID",
-                        "Class 12 Marksheet",
-                        "JEE Main Scorecard",
-                        "Passport-size photographs",
-                        "Caste/Category certificate (if applicable)"
-                    ],
-                    "suggestions": [
-                        "Prepare for JEE Main with mock tests.",
-                        "Ensure all documents are ready before the application deadline."
+            "overview": "Admissions are offered via multiple methods, each with its own eligibility, documents, and deadlines.",
+            "methods": [
+                {
+                    "type": "Exam-Based",
+                    "methods": [
+                        {
+                            "name": "JEE Main",
+                            "applicationPrograms": ["B.Tech"],
+                            "eligibility": [
+                                "Class 12 with Physics, Chemistry, Mathematics",
+                                "Minimum 75% aggregate",
+                                "JEE Main score"
+                            ],
+                            "requiredDocuments": [
+                                "Photo ID",
+                                "Class 12 Marksheet",
+                                "JEE Main Admit Card",
+                                "JEE Main Scorecard",
+                                "Passport-size photographs",
+                                "Caste/Category certificate (if applicable)"
+                            ],
+                            "steps": [
+                                {"step": "Registration", "deadline": "2025-04-30", "link": "https://jeemain.nta.nic.in"},
+                                {"step": "Exam Date", "deadline": "2025-05-20"},
+                                {"step": "Result Declaration", "deadline": "2025-06-05", "link": "https://jeemain.nta.nic.in"},
+                                {"step": "JoSAA Counseling Registration", "deadline": "2025-06-15", "link": "https://josaa.nic.in"},
+                                {"step": "Document Verification", "deadline": "2025-07-10"}
+                            ]
+                        },
+                        {
+                            "name": "State CET",
+                            "applicationPrograms": ["B.Tech"],
+                            "eligibility": [
+                                "Class 12 with PCM",
+                                "State CET score"
+                            ],
+                            "requiredDocuments": [
+                                "Photo ID",
+                                "Class 12 Marksheet",
+                                "State CET Admit Card",
+                                "State CET Scorecard",
+                                "Passport-size photographs",
+                                "Domicile certificate (if applicable)"
+                            ],
+                            "steps": [
+                                {"step": "Registration", "deadline": "2025-03-31"},
+                                {"step": "Exam Date", "deadline": "2025-04-20"},
+                                {"step": "Counseling Registration", "deadline": "2025-05-10"},
+                                {"step": "Document Verification", "deadline": "2025-06-01"}
+                            ]
+                        },
+                        {
+                            "name": "GATE",
+                            "applicationPrograms": ["M.Tech"],
+                            "eligibility": [
+                                "B.E/B.Tech in relevant field",
+                                "Valid GATE score"
+                            ],
+                            "requiredDocuments": [
+                                "Photo ID",
+                                "B.E/B.Tech Degree Certificate",
+                                "GATE Admit Card",
+                                "GATE Scorecard",
+                                "Passport-size photographs"
+                            ],
+                            "steps": [
+                                {"step": "Registration", "deadline": "2025-05-15"},
+                                {"step": "Exam Date", "deadline": "2025-06-10"},
+                                {"step": "Interview", "deadline": "2025-07-05"}
+                            ]
+                        },
+                        {
+                            "name": "CAT",
+                            "applicationPrograms": ["MBA"],
+                            "eligibility": [
+                                "Any bachelor's degree",
+                                "CAT/MAT/XAT score"
+                            ],
+                            "requiredDocuments": [
+                                "Photo ID",
+                                "Bachelor's Degree Certificate",
+                                "CAT/MAT/XAT Admit Card",
+                                "CAT/MAT/XAT Scorecard",
+                                "Passport-size photographs"
+                            ],
+                            "steps": [
+                                {"step": "Registration", "deadline": "2025-06-30"},
+                                {"step": "Exam Date", "deadline": "2025-07-15"},
+                                {"step": "GD & Interview", "deadline": "2025-08-05"}
+                            ]
+                        }
                     ]
                 },
-                "M.Tech": {
-                    "importantDates": [
-                        {"event": "Application Start", "startDate": "2025-03-01", "endDate": "2025-05-15", "status": "Closed"},
-                        {"event": "GATE Exam", "startDate": "2025-06-10", "endDate": "2025-06-10", "status": "Closed"},
-                        {"event": "Interview", "startDate": "2025-07-01", "endDate": "2025-07-05", "status": "Upcoming"}
-                    ],
-                    "eligibility": ["B.E/B.Tech in relevant field", "GATE score"],
-                    "requiredDocuments": [
-                        "Photo ID",
-                        "B.E/B.Tech Degree Certificate",
-                        "GATE Scorecard",
-                        "Passport-size photographs",
-                        "Caste/Category certificate (if applicable)"
-                    ],
-                    "suggestions": [
-                        "Focus on core subjects for GATE preparation.",
-                        "Check the interview schedule and prepare accordingly."
-                    ]
-                },
-                "MBA": {
-                    "importantDates": [
-                        {"event": "Application Start", "startDate": "2025-04-01", "endDate": "2025-06-30", "status": "Ongoing"},
-                        {"event": "CAT Exam", "startDate": "2025-07-15", "endDate": "2025-07-15", "status": "Upcoming"},
-                        {"event": "Group Discussion & Interview", "startDate": "2025-08-01", "endDate": "2025-08-05", "status": "Upcoming"}
-                    ],
-                    "eligibility": ["Any bachelor's degree", "CAT/MAT/XAT score"],
-                    "requiredDocuments": [
-                        "Photo ID",
-                        "Bachelor's Degree Certificate",
-                        "CAT/MAT/XAT Scorecard",
-                        "Passport-size photographs",
-                        "Caste/Category certificate (if applicable)"
-                    ],
-                    "suggestions": [
-                        "Work on communication and presentation skills for the GD round.",
-                        "Review past CAT papers for better preparation."
+                {
+                    "type": "Non-Exam-Based",
+                    "methods": [
+                        {
+                            "name": "Direct Admission / Management Quota",
+                            "applicationPrograms": ["B.Tech", "MBA", "M.Tech"],
+                            "eligibility": [
+                                "Class 12 marks (for UG)",
+                                "Bachelor's degree (for PG)",
+                                "As per college policy"
+                            ],
+                            "requiredDocuments": [
+                                "Photo ID",
+                                "Class 12/Bachelor's Marksheet",
+                                "Passport-size photographs",
+                                "Caste/Category certificate (if applicable)"
+                            ],
+                            "steps": [
+                                {"step": "Application Submission", "deadline": "2025-07-31"},
+                                {"step": "Document Verification", "deadline": "2025-08-10"},
+                                {"step": "Fee Payment", "deadline": "2025-08-15"}
+                            ]
+                        },
+                        {
+                            "name": "Lateral Entry (LEET)",
+                            "applicationPrograms": ["B.Tech (2nd year)"],
+                            "eligibility": [
+                                "Diploma in Engineering",
+                                "LEET score"
+                            ],
+                            "requiredDocuments": [
+                                "Photo ID",
+                                "Diploma Marksheet",
+                                "LEET Admit Card",
+                                "LEET Scorecard",
+                                "Passport-size photographs"
+                            ],
+                            "steps": [
+                                {"step": "LEET Registration", "deadline": "2025-05-20"},
+                                {"step": "Exam Date", "deadline": "2025-06-10"},
+                                {"step": "Counseling", "deadline": "2025-07-01"}
+                            ]
+                        },
+                        {
+                            "name": "NRI/International Admissions",
+                            "applicationPrograms": ["B.Tech", "MBA", "M.Tech"],
+                            "eligibility": [
+                                "NRI/Foreign student status",
+                                "Class 12/Bachelor's marks"
+                            ],
+                            "requiredDocuments": [
+                                "Photo ID",
+                                "Passport",
+                                "Class 12/Bachelor's Marksheet",
+                                "Proof of NRI/International status",
+                                "Passport-size photographs"
+                            ],
+                            "steps": [
+                                {"step": "Application Submission", "deadline": "2025-06-30"},
+                                {"step": "Document Verification", "deadline": "2025-07-15"},
+                                {"step": "Fee Payment", "deadline": "2025-07-31"}
+                            ]
+                        },
+                        {
+                            "name": "Special Category Admissions",
+                            "applicationPrograms": ["All"],
+                            "eligibility": [
+                                "Eligibility as per quota (Sports/Defense/Minority/EWS/SC/ST/OBC)"
+                            ],
+                            "requiredDocuments": [
+                                "Photo ID",
+                                "Quota certificate",
+                                "Class 12/Bachelor's Marksheet",
+                                "Passport-size photographs"
+                            ],
+                            "steps": [
+                                {"step": "Quota Application", "deadline": "2025-06-30"},
+                                {"step": "Document Submission", "deadline": "2025-07-10"},
+                                {"step": "Verification", "deadline": "2025-07-20"}
+                            ]
+                        }
                     ]
                 }
-            },
+            ],
             "generalGuidelines": [
-                "Ensure all documents are uploaded in the correct format.",
+                "Ensure all documents are uploaded in the correct format in the admission portal.",
                 "Track your application status on the admissions portal.",
                 "Contact the admissions helpline for any queries."
+            ],
+            "importantLinks": [
+                {"label": "Official Admissions Portal", "url": "https://www.nita.edu.in/admissions"},
+                {"label": "JEE Main Website", "url": "https://jeemain.nta.nic.in"},
+                {"label": "GATE Official Site", "url": "https://gate.iitb.ac.in"},
+                {"label": "CAT Official Site", "url": "https://iimcat.ac.in"}
+            ],
+            "faqs": [
+                {"question": "What is the application fee for B.Tech admissions?",
+                    "answer": "The application fee for B.Tech admissions via JEE Main is INR 650 for General category and INR 325 for SC/ST/PwD categories."
+                },
+                {
+                    "question": "Can I apply for multiple programs?",
+                    "answer": "Yes, you can apply for multiple programs, but ensure you meet the eligibility criteria for each."
+                },
+                {
+                    "question": "What are the scholarship options available?",
+                    "answer": "Various scholarships are available based on merit, category, and financial need. Check the scholarships section on the official website for details."
+                }
             ]
         }
 
@@ -925,7 +1084,7 @@ class CollegeService:
                         "youtube": "https://youtube.com/@nita_coding",
                         "linkedin": "https://linkedin.com/company/nita-coding"
                     },
-                    "mediaEmbed": "<iframe src='https://www.youtube.com/embed/dQw4w9WgXcQ' />"
+                    # "mediaEmbed": "<iframe src='https://www.youtube.com/embed/dQw4w9WgXcQ' />"
                 },
                 {
                     "id": "robotics",
@@ -954,7 +1113,7 @@ class CollegeService:
                     "registrationLink": "https://www.nita.edu.in/techfest",
                     "highlights": ["Keynote by industry leader", "24h hackathon", "Robotics expo"],
                     "social": { "instagram": "https://instagram.com/nita_techfest", "website": "https://www.nita.edu.in/techfest" },
-                    "mediaEmbed": "<iframe src='https://player.vimeo.com/video/123456' />"
+                    # "mediaEmbed": "<iframe src='https://player.vimeo.com/video/123456' />"
                 },
                 {
                     "id": "cultural25",
