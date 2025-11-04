@@ -1055,18 +1055,158 @@ class CollegeService:
                 {"name": "Career Services", "description": "Internships, placements, resume workshops."}
             ],
             "diningOptions": [
-                {"name": "Central Mess", "type": "Veg/Non-veg", "signature": "Thali, biryani", "openTill": "22:00"},
-                {"name": "Cafe Byte", "type": "Cafe", "signature": "Sandwiches, coffee", "openTill": "23:00"}
+                {"name": "Central Mess", "type": "Veg/Non-veg", "signature": "Thali, biryani", "openTill": "22:00", "url": "https://picsum.photos/seed/centralmess/800/400"},
+                {"name": "Cafe Byte", "type": "Cafe", "signature": "Sandwiches, coffee", "openTill": "23:00", "url": "https://picsum.photos/seed/cafebyte/800/400"}
             ],
             "sportsAndFitness": [
-                {"name": "Indoor stadium", "details": "Badminton, table tennis"},
-                {"name": "Fitness center", "details": "Weights, cardio"}
+                {"name": "Indoor stadium", "details": "Badminton, table tennis", "url": "https://picsum.photos/seed/indoorstadium/800/400", "openTill": "21:00"},
+                {"name": "Fitness center", "details": "Weights, cardio", "url": "https://picsum.photos/seed/fitnesscenter/800/400"}
             ],
             "wellnessPrograms": [
                 {"name": "Mindful Mondays", "description": "Guided meditation and stress relief."},
                 {"name": "Health Camps", "description": "Quarterly check-ups and nutrition advice."}
+            ],
+            "residential": [
+              {
+                "name": "Sunrise Hostel",
+                "hostel_type": "boys",
+                "capacity": 200,
+                "rooms": "Single, Double",
+                "facilities": ["Wi-Fi", "Laundry", "Common Room", "Mess"],
+                "gallery": [
+                  {
+                    "url": "https://picsum.photos/seed/sunrise1/800/400",
+                    "description": "Front view of Sunrise Hostel",
+                    "year": 2023,
+                    "photographerCredit": "John Doe",
+                  },
+                  {
+                    "url": "https://picsum.photos/seed/sunrise2/800/400",
+                    "description": "Common room in Sunrise Hostel",
+                    "year": 2023,
+                    "photographerCredit": "Jane Smith",
+                  },
+                ],
+                "description": "A modern boys' hostel with all essential amenities.",
+                "reviews": [
+                  {
+                    "student": "Rahul Sharma",
+                    "batch": "2024",
+                    "comment": "The hostel is clean and well-maintained. Food quality is good.",
+                    "ratings": {
+                      "cleanliness": 4,
+                      "management": 4,
+                      "infrastructure": 5,
+                      "overall": 4,
+                    },
+                  },
+                  {
+                    "student": "Amit Verma",
+                    "batch": "2023",
+                    "comment": "Great facilities but the Wi-Fi speed could be improved.",
+                    "ratings": {
+                      "cleanliness": 5,
+                      "management": 3,
+                      "infrastructure": 4,
+                      "overall": 4,
+                    },
+                  },
+                ],
+              },
+              {
+                "name": "Moonlight Hostel",
+                "hostel_type": "girls",
+                "capacity": 150,
+                "rooms": "Single, Triple",
+                "facilities": ["Wi-Fi", "24/7 Security", "Gym", "Mess"],
+                "gallery": [
+                  {
+                    "url": "https://picsum.photos/seed/moonlight1/800/400",
+                    "description": "Entrance of Moonlight Hostel",
+                    "year": 2023,
+                    "photographerCredit": "Alice Johnson",
+                  },
+                  {
+                    "url": "https://picsum.photos/seed/moonlight2/800/400",
+                    "description": "Dining area in Moonlight Hostel",
+                    "year": 2023,
+                    "photographerCredit": "Bob Brown",
+                  },
+                ],
+                "description": "A safe and secure hostel for girls with modern facilities.",
+                "reviews": [
+                  {
+                    "student": "Priya Singh",
+                    "batch": "2025",
+                    "comment": "The hostel is very secure and the gym is well-equipped.",
+                    "ratings": {
+                      "cleanliness": 5,
+                      "management": 4,
+                      "infrastructure": 5,
+                      "overall": 5,
+                    },
+                  },
+                  {
+                    "student": "Anjali Mehta",
+                    "batch": "2024",
+                    "comment": "The rooms are spacious and the staff is very helpful.",
+                    "ratings": {
+                      "cleanliness": 4,
+                      "management": 5,
+                      "infrastructure": 4,
+                      "overall": 4,
+                    },
+                  },
+                ],
+              },
+              {
+                "name": "Moonlight Hostel",
+                "hostel_type": "co-ed",
+                "capacity": 150,
+                "rooms": "Single, Triple",
+                "facilities": ["Wi-Fi", "24/7 Security", "Gym", "Mess"],
+                "gallery": [
+                  {
+                    "url": "https://picsum.photos/seed/moonlight1/800/400",
+                    "description": "Entrance of Moonlight Hostel",
+                    "year": 2023,
+                    "photographerCredit": "Alice Johnson",
+                  },
+                  {
+                    "url": "https://picsum.photos/seed/moonlight2/800/400",
+                    "description": "Dining area in Moonlight Hostel",
+                    "year": 2023,
+                    "photographerCredit": "Bob Brown",
+                  },
+                ],
+                "description": "A safe and secure hostel for girls with modern facilities.",
+                "reviews": [
+                  {
+                    "student": "Priya Singh",
+                    "batch": "2025",
+                    "comment": "The hostel is very secure and the gym is well-equipped.",
+                    "ratings": {
+                      "cleanliness": 5,
+                      "management": 4,
+                      "infrastructure": 5,
+                      "overall": 5,
+                    },
+                  },
+                  {
+                    "student": "Anjali Mehta",
+                    "batch": "2024",
+                    "comment": "The rooms are spacious and the staff is very helpful.",
+                    "ratings": {
+                      "cleanliness": 4,
+                      "management": 5,
+                      "infrastructure": 4,
+                      "overall": 4,
+                    },
+                  },
+                ],
+              },
             ]
-        }
+          }
 
     @staticmethod
     def get_clubs(college_id: int) -> dict:
