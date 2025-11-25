@@ -423,7 +423,7 @@ class CollegeService:
             "city": "Dadri",
             "state": "Uttar Pradesh",
             "pincode": "203207",
-            "coordinates": {"lat": 28.567, "lng": 77.553}
+            "coordinates": {"lat": 12.99151, "lng": 80.23362}
             },
             "contact": {
             "phone": ["+91-120-1234567", "+91-120-7654321"],
@@ -486,37 +486,200 @@ class CollegeService:
     def get_fee_structure(college_id: int) -> dict:
         """Get college fee structure for all programs"""
         return {
-            "undergraduate": {
-                "B.Tech": {
-                    "tuition": "INR 1,20,000 per year",
-                    "mess": "INR 60,000 per year",
-                    "hostel": "INR 45,000 per year",
-                    "other": "INR 15,500 per year",
-                    "total": "INR 1,80,500 per year"
-                }
-            },
-            "postgraduate": {
-                "M.Tech": {
-                    "tuition": "INR 1,50,000 per year",
-                    "hostel": "INR 50,000 per year",
-                    "other": "INR 20,000 per year",
-                    "total": "INR 2,20,000 per year"
+            "undergraduate": [
+                {
+                    "programe_name": "B.Tech",
+                    "description": "General/OBC/EWS with family income above ₹5 Lakhs",
+                    "fees": {
+                        "admission": 3000,
+                        "student_welfare": 1500,
+                        "career_pathway_facility": 9500,
+                        "alumni_services": 6000,
+                        "tuition": 100000,
+                        "enrolment": 1500,
+                        "medical": 1500,
+                        "seat_rent": 7500,
+                        "extra_curricular": 2000,
+                        "student_wellness": 500,
+                        "student_medical_insurance": 2402,
+                        "caution_deposit": 5000
+                    }
                 },
-                "MBA": {
-                    "tuition": "INR 2,00,000 per year",
-                    "hostel": "INR 60,000 per year",
-                    "other": "INR 25,000 per year",
-                    "total": "INR 2,85,000 per year"
+                {
+                    "programe_name": "B.Tech",
+                    "description": "General/OBC/EWS with family income between ₹1-5 Lakhs",
+                    "fees": {
+                        "admission": 3000,
+                        "student_welfare": 1500,
+                        "career_pathway_facility": 9500,
+                        "alumni_services": 6000,
+                        "tuition": 33333,
+                        "enrolment": 1500,
+                        "medical": 1500,
+                        "seat_rent": 7500,
+                        "extra_curricular": 2000,
+                        "student_wellness": 500,
+                        "student_medical_insurance": 2402,
+                        "caution_deposit": 5000
+                    }
+                },
+                {
+                    "programe_name": "B.Tech",
+                    "description": "General/OBC/EWS with family income below ₹1 Lakh and SC/ST/PwD",
+                    "fees": {
+                        "admission": 3000,
+                        "student_welfare": 1500,
+                        "career_pathway_facility": 9500,
+                        "alumni_services": 6000,
+                        "tuition": 0,
+                        "enrolment": 1500,
+                        "medical": 1500,
+                        "seat_rent": 7500,
+                        "extra_curricular": 2000,
+                        "student_wellness": 500,
+                        "student_medical_insurance": 2402,
+                        "caution_deposit": 5000
+                    }
                 }
-            },
-            "doctorate": {
-                "PhD": {
-                    "tuition": "INR 50,000 per year",
-                    "hostel": "INR 30,000 per year",
-                    "other": "INR 10,000 per year",
-                    "total": "INR 90,000 per year"
+            ],
+            "postgraduate": [
+                {
+                    "programe_name": "M.Tech",
+                    "description": "General/OBC/EWS",
+                    "fees": {
+                        "admission": 3000,
+                        "student_welfare": 1500,
+                        "career_pathway_facility": 9500,
+                        "alumni_services": 6000,
+                        "tuition": 25000,
+                        "enrolment": 1500,
+                        "medical": 1500,
+                        "seat_rent": 7500,
+                        "extra_curricular": 2000,
+                        "student_wellness": 500,
+                        "student_medical_insurance": 2402,
+                        "caution_deposit": 5000
+                    }
+                },
+                {
+                    "programe_name": "M.Tech",
+                    "description": "SC/ST/PwD",
+                    "fees": {
+                        "admission": 3000,
+                        "student_welfare": 1500,
+                        "career_pathway_facility": 9500,
+                        "alumni_services": 6000,
+                        "tuition": 0,
+                        "enrolment": 1500,
+                        "medical": 1500,
+                        "seat_rent": 7500,
+                        "extra_curricular": 2000,
+                        "student_wellness": 500,
+                        "student_medical_insurance": 2402,
+                        "caution_deposit": 5000
+                    }
+                },
+                {
+                    "programe_name": "M.Sc",
+                    "description": "General/OBC/EWS",
+                    "fees": {
+                        "admission": 3000,
+                        "student_welfare": 1500,
+                        "career_pathway_facility": 9500,
+                        "alumni_services": 6000,
+                        "tuition": 25000,
+                        "enrolment": 1500,
+                        "medical": 1500,
+                        "seat_rent": 7500,
+                        "extra_curricular": 2000,
+                        "student_wellness": 500,
+                        "student_medical_insurance": 2402,
+                        "caution_deposit": 5000
+                    }
+                },
+                {
+                    "programe_name": "M.Sc",
+                    "description": "SC/ST/PwD",
+                    "fees": {
+                        "admission": 3000,
+                        "student_welfare": 1500,
+                        "career_pathway_facility": 9500,
+                        "alumni_services": 6000,
+                        "tuition": 0,
+                        "enrolment": 1500,
+                        "medical": 1500,
+                        "seat_rent": 7500,
+                        "extra_curricular": 2000,
+                        "student_wellness": 500,
+                        "student_medical_insurance": 2402,
+                        "caution_deposit": 5000
+                    }
+                },
+                {
+                    "programe_name": "M.A",
+                    "description": "General/OBC/EWS",
+                    "fees": {
+                        "admission": 3000,
+                        "student_welfare": 1500,
+                        "career_pathway_facility": 9500,
+                        "alumni_services": 6000,
+                        "tuition": 20000,
+                        "enrolment": 1500,
+                        "medical": 1500,
+                        "seat_rent": 7500,
+                        "extra_curricular": 2000,
+                        "student_wellness": 500,
+                        "student_medical_insurance": 2402,
+                        "caution_deposit": 5000
+                    }
+                },
+                {
+                    "programe_name": "M.A",
+                    "description": "SC/ST/PwD",
+                    "fees": {
+                        "admission": 3000,
+                        "student_welfare": 1500,
+                        "career_pathway_facility": 9500,
+                        "alumni_services": 6000,
+                        "tuition": 0,
+                        "enrolment": 1500,
+                        "medical": 1500,
+                        "seat_rent": 7500,
+                        "extra_curricular": 2000,
+                        "student_wellness": 500,
+                        "student_medical_insurance": 2402,
+                        "caution_deposit": 5000
+                    }
                 }
-            }
+            ],
+            "doctoral": [
+                {
+                    "programe_name": "Ph.D.",
+                    "description": "General/OBC/EWS",
+                    "fees": {
+                        "tuition": 5000,
+                        "enrolment": 1500,
+                        "medical": 1500,
+                        "seat_rent": 7500,
+                        "extra_curricular": 2000,
+                        "student_wellness": 500,
+                        "student_medical_insurance": 2402
+                    }
+                },
+                {
+                    "programe_name": "Ph.D.",
+                    "description": "SC/ST/PwD",
+                    "fees": {
+                        "tuition": 0,
+                        "enrolment": 1500,
+                        "medical": 1500,
+                        "seat_rent": 7500,
+                        "extra_curricular": 2000,
+                        "student_wellness": 500,
+                        "student_medical_insurance": 2402
+                    }
+                }
+            ]
         }
 
     @staticmethod
@@ -1047,163 +1210,236 @@ class CollegeService:
         """Get campus life experience information"""
         return {
             "lifestyleHighlights": [
-                {"title": "Festive campus", "description": "Annual tech, cultural, and sports fests bring the campus alive."},
-                {"title": "Peer learning", "description": "Clubs and labs foster collaborative projects and knowledge sharing."}
+            {"title": "Festive campus", "description": "Annual tech, cultural, and sports fests bring the campus alive."},
+            {"title": "Peer learning", "description": "Clubs and labs foster collaborative projects and knowledge sharing."}
             ],
             "supportServices": [
-                {"name": "Counseling Center", "description": "Mental health support and mentoring."},
-                {"name": "Career Services", "description": "Internships, placements, resume workshops."}
+            {"name": "Counseling Center", "description": "Mental health support and mentoring."},
+            {"name": "Career Services", "description": "Internships, placements, resume workshops."}
             ],
             "diningOptions": [
-                {"name": "Central Mess", "type": "Veg/Non-veg", "signature": "Thali, biryani", "openTill": "22:00", "url": "https://picsum.photos/seed/centralmess/800/400"},
-                {"name": "Cafe Byte", "type": "Cafe", "signature": "Sandwiches, coffee", "openTill": "23:00", "url": "https://picsum.photos/seed/cafebyte/800/400"}
+            {
+                "name": "Central Mess",
+                "type": "Veg/Non-veg",
+                "signature": "Thali, biryani",
+                "openTill": "22:00",
+                "gallery": [
+                {
+                    "url": "https://picsum.photos/seed/centralmess1/800/400",
+                    "description": "Main dining hall of Central Mess",
+                    "year": 2023,
+                    "photographerCredit": "Ravi Kumar"
+                },
+                {
+                    "url": "https://picsum.photos/seed/centralmess2/800/400",
+                    "description": "Food counter at Central Mess",
+                    "year": 2023,
+                    "photographerCredit": "Priya Sharma"
+                }
+                ]
+            },
+            {
+                "name": "Cafe Byte",
+                "type": "Cafe",
+                "signature": "Sandwiches, coffee",
+                "openTill": "23:00",
+                "gallery": [
+                {
+                    "url": "https://picsum.photos/seed/cafebyte1/800/400",
+                    "description": "Interior view of Cafe Byte",
+                    "year": 2024,
+                    "photographerCredit": "Amit Verma"
+                },
+                {
+                    "url": "https://picsum.photos/seed/cafebyte2/800/400",
+                    "description": "Coffee bar at Cafe Byte",
+                    "year": 2024,
+                    "photographerCredit": "Neha Gupta"
+                }
+                ]
+            }
             ],
             "sportsAndFitness": [
-                {"name": "Indoor stadium", "details": "Badminton, table tennis", "url": "https://picsum.photos/seed/indoorstadium/800/400", "openTill": "21:00"},
-                {"name": "Fitness center", "details": "Weights, cardio", "url": "https://picsum.photos/seed/fitnesscenter/800/400"}
+            {
+                "name": "Indoor stadium",
+                "details": "Badminton, table tennis",
+                "openTill": "21:00",
+                "gallery": [
+                {
+                    "url": "https://picsum.photos/seed/indoorstadium1/800/400",
+                    "description": "Badminton courts in indoor stadium",
+                    "year": 2023,
+                    "photographerCredit": "Suresh Patel"
+                },
+                {
+                    "url": "https://picsum.photos/seed/indoorstadium2/800/400",
+                    "description": "Table tennis area",
+                    "year": 2023,
+                    "photographerCredit": "Vikram Singh"
+                }
+                ]
+            },
+            {
+                "name": "Fitness center",
+                "details": "Weights, cardio",
+                "gallery": [
+                {
+                    "url": "https://picsum.photos/seed/fitnesscenter1/800/400",
+                    "description": "Cardio equipment section",
+                    "year": 2024,
+                    "photographerCredit": "Anjali Reddy"
+                },
+                {
+                    "url": "https://picsum.photos/seed/fitnesscenter2/800/400",
+                    "description": "Weight training area",
+                    "year": 2024,
+                    "photographerCredit": "Karan Mehta"
+                }
+                ]
+            }
             ],
             "wellnessPrograms": [
-                {"name": "Mindful Mondays", "description": "Guided meditation and stress relief."},
-                {"name": "Health Camps", "description": "Quarterly check-ups and nutrition advice."}
+            {"name": "Mindful Mondays", "description": "Guided meditation and stress relief."},
+            {"name": "Health Camps", "description": "Quarterly check-ups and nutrition advice."}
             ],
             "residential": [
               {
-                "name": "Sunrise Hostel",
-                "hostel_type": "boys",
-                "capacity": 200,
-                "rooms": "Single, Double",
-                "facilities": ["Wi-Fi", "Laundry", "Common Room", "Mess"],
-                "gallery": [
-                  {
-                    "url": "https://picsum.photos/seed/sunrise1/800/400",
-                    "description": "Front view of Sunrise Hostel",
-                    "year": 2023,
-                    "photographerCredit": "John Doe",
-                  },
-                  {
-                    "url": "https://picsum.photos/seed/sunrise2/800/400",
-                    "description": "Common room in Sunrise Hostel",
-                    "year": 2023,
-                    "photographerCredit": "Jane Smith",
-                  },
-                ],
-                "description": "A modern boys' hostel with all essential amenities.",
-                "reviews": [
-                  {
-                    "student": "Rahul Sharma",
-                    "batch": "2024",
-                    "comment": "The hostel is clean and well-maintained. Food quality is good.",
-                    "ratings": {
-                      "cleanliness": 4,
-                      "management": 4,
-                      "infrastructure": 5,
-                      "overall": 4,
-                    },
-                  },
-                  {
-                    "student": "Amit Verma",
-                    "batch": "2023",
-                    "comment": "Great facilities but the Wi-Fi speed could be improved.",
-                    "ratings": {
-                      "cleanliness": 5,
-                      "management": 3,
-                      "infrastructure": 4,
-                      "overall": 4,
-                    },
-                  },
-                ],
+            "name": "Sunrise Hostel",
+            "hostel_type": "boys",
+            "capacity": 200,
+            "rooms": "Single, Double",
+            "facilities": ["Wi-Fi", "Laundry", "Common Room", "Mess"],
+            "gallery": [
+              {
+                "url": "https://picsum.photos/seed/sunrise1/800/400",
+                "description": "Front view of Sunrise Hostel",
+                "year": 2023,
+                "photographerCredit": "John Doe",
               },
               {
-                "name": "Moonlight Hostel",
-                "hostel_type": "girls",
-                "capacity": 150,
-                "rooms": "Single, Triple",
-                "facilities": ["Wi-Fi", "24/7 Security", "Gym", "Mess"],
-                "gallery": [
-                  {
-                    "url": "https://picsum.photos/seed/moonlight1/800/400",
-                    "description": "Entrance of Moonlight Hostel",
-                    "year": 2023,
-                    "photographerCredit": "Alice Johnson",
-                  },
-                  {
-                    "url": "https://picsum.photos/seed/moonlight2/800/400",
-                    "description": "Dining area in Moonlight Hostel",
-                    "year": 2023,
-                    "photographerCredit": "Bob Brown",
-                  },
-                ],
-                "description": "A safe and secure hostel for girls with modern facilities.",
-                "reviews": [
-                  {
-                    "student": "Priya Singh",
-                    "batch": "2025",
-                    "comment": "The hostel is very secure and the gym is well-equipped.",
-                    "ratings": {
-                      "cleanliness": 5,
-                      "management": 4,
-                      "infrastructure": 5,
-                      "overall": 5,
-                    },
-                  },
-                  {
-                    "student": "Anjali Mehta",
-                    "batch": "2024",
-                    "comment": "The rooms are spacious and the staff is very helpful.",
-                    "ratings": {
-                      "cleanliness": 4,
-                      "management": 5,
-                      "infrastructure": 4,
-                      "overall": 4,
-                    },
-                  },
-                ],
+                "url": "https://picsum.photos/seed/sunrise2/800/400",
+                "description": "Common room in Sunrise Hostel",
+                "year": 2023,
+                "photographerCredit": "Jane Smith",
+              },
+            ],
+            "description": "A modern boys' hostel with all essential amenities.",
+            "reviews": [
+              {
+                "student": "Rahul Sharma",
+                "batch": "2024",
+                "comment": "The hostel is clean and well-maintained. Food quality is good.",
+                "ratings": {
+                  "cleanliness": 4,
+                  "management": 4,
+                  "infrastructure": 5,
+                  "overall": 4,
+                },
               },
               {
-                "name": "Moonlight Hostel",
-                "hostel_type": "co-ed",
-                "capacity": 150,
-                "rooms": "Single, Triple",
-                "facilities": ["Wi-Fi", "24/7 Security", "Gym", "Mess"],
-                "gallery": [
-                  {
-                    "url": "https://picsum.photos/seed/moonlight1/800/400",
-                    "description": "Entrance of Moonlight Hostel",
-                    "year": 2023,
-                    "photographerCredit": "Alice Johnson",
-                  },
-                  {
-                    "url": "https://picsum.photos/seed/moonlight2/800/400",
-                    "description": "Dining area in Moonlight Hostel",
-                    "year": 2023,
-                    "photographerCredit": "Bob Brown",
-                  },
-                ],
-                "description": "A safe and secure hostel for girls with modern facilities.",
-                "reviews": [
-                  {
-                    "student": "Priya Singh",
-                    "batch": "2025",
-                    "comment": "The hostel is very secure and the gym is well-equipped.",
-                    "ratings": {
-                      "cleanliness": 5,
-                      "management": 4,
-                      "infrastructure": 5,
-                      "overall": 5,
-                    },
-                  },
-                  {
-                    "student": "Anjali Mehta",
-                    "batch": "2024",
-                    "comment": "The rooms are spacious and the staff is very helpful.",
-                    "ratings": {
-                      "cleanliness": 4,
-                      "management": 5,
-                      "infrastructure": 4,
-                      "overall": 4,
-                    },
-                  },
-                ],
+                "student": "Amit Verma",
+                "batch": "2023",
+                "comment": "Great facilities but the Wi-Fi speed could be improved.",
+                "ratings": {
+                  "cleanliness": 5,
+                  "management": 3,
+                  "infrastructure": 4,
+                  "overall": 4,
+                },
+              },
+            ],
+              },
+              {
+            "name": "Moonlight Hostel",
+            "hostel_type": "girls",
+            "capacity": 150,
+            "rooms": "Single, Triple",
+            "facilities": ["Wi-Fi", "24/7 Security", "Gym", "Mess"],
+            "gallery": [
+              {
+                "url": "https://picsum.photos/seed/moonlight1/800/400",
+                "description": "Entrance of Moonlight Hostel",
+                "year": 2023,
+                "photographerCredit": "Alice Johnson",
+              },
+              {
+                "url": "https://picsum.photos/seed/moonlight2/800/400",
+                "description": "Dining area in Moonlight Hostel",
+                "year": 2023,
+                "photographerCredit": "Bob Brown",
+              },
+            ],
+            "description": "A safe and secure hostel for girls with modern facilities.",
+            "reviews": [
+              {
+                "student": "Priya Singh",
+                "batch": "2025",
+                "comment": "The hostel is very secure and the gym is well-equipped.",
+                "ratings": {
+                  "cleanliness": 5,
+                  "management": 4,
+                  "infrastructure": 5,
+                  "overall": 5,
+                },
+              },
+              {
+                "student": "Anjali Mehta",
+                "batch": "2024",
+                "comment": "The rooms are spacious and the staff is very helpful.",
+                "ratings": {
+                  "cleanliness": 4,
+                  "management": 5,
+                  "infrastructure": 4,
+                  "overall": 4,
+                },
+              },
+            ],
+              },
+              {
+            "name": "Starlight Hostel",
+            "hostel_type": "co-ed",
+            "capacity": 150,
+            "rooms": "Single, Triple",
+            "facilities": ["Wi-Fi", "24/7 Security", "Gym", "Mess"],
+            "gallery": [
+              {
+                "url": "https://picsum.photos/seed/starlight1/800/400",
+                "description": "Entrance of Starlight Hostel",
+                "year": 2023,
+                "photographerCredit": "Alice Johnson",
+              },
+              {
+                "url": "https://picsum.photos/seed/starlight2/800/400",
+                "description": "Dining area in Starlight Hostel",
+                "year": 2023,
+                "photographerCredit": "Bob Brown",
+              },
+            ],
+            "description": "A safe and secure co-ed hostel with modern facilities.",
+            "reviews": [
+              {
+                "student": "Priya Singh",
+                "batch": "2025",
+                "comment": "The hostel is very secure and the gym is well-equipped.",
+                "ratings": {
+                  "cleanliness": 5,
+                  "management": 4,
+                  "infrastructure": 5,
+                  "overall": 5,
+                },
+              },
+              {
+                "student": "Anjali Mehta",
+                "batch": "2024",
+                "comment": "The rooms are spacious and the staff is very helpful.",
+                "ratings": {
+                  "cleanliness": 4,
+                  "management": 5,
+                  "infrastructure": 4,
+                  "overall": 4,
+                },
+              },
+            ],
               },
             ]
           }
@@ -1331,20 +1567,257 @@ class CollegeService:
         """Get alumni network information"""
         return {
             "totalAlumni": 18500,
-            "notableAlumni": [
-                {"id": "al1", "name": "Anita Verma", "batch": "2010", "position": "VP Engineering", "company": "TCS", "image": "https://picsum.photos/seed/al1/400/400"},
-                {"id": "al2", "name": "Harsh Vardhan", "batch": "2012", "position": "Director, Product", "company": "Flipkart", "image": "https://picsum.photos/seed/al2/400/400"}
-            ]
+            "notableAlumni": [{'name': 'Abhishek Srivastava',
+'position': 'Founder and CEO',
+'organisation': 'Techcanvass',
+'image': 'https://cache.careers360.mobi/media/colleges/alumni/Abhishek_Srivastava.jpeg?w=48&h=48',
+'batch': None,
+'branch': None,
+'achievement': None},
+{'name': 'Binod Singh',
+'position': 'Founder President, CEO - Chicago and Bangalore',
+'organisation': 'Ilantus Technologies',
+'image': 'https://cache.careers360.mobi/media/colleges/alumni/Binod_Singh.jpeg?w=48&h=48',
+'batch': None,
+'branch': None,
+'achievement': None},
+{'name': 'Kunal Singh',
+'position': 'Head, Business Development - Gears Division - India',
+'organisation': 'Mahindra & Mahindra Limited',
+'image': 'https://cache.careers360.mobi/media/colleges/alumni/Kunal_Singh.jpeg?w=48&h=48',
+'batch': None,
+'branch': None,
+'achievement': None},
+{'name': 'Nitish Kumar',
+'position': 'Politician; Current Chief Minister of Bihar',
+'organisation': None,
+'image': 'https://cache.careers360.mobi/media/colleges/alumni/Nitish_Kumar.webp?w=48&h=48',
+'batch': 1973,
+'branch': None,
+'achievement': None},
+{'name': 'Saket Kumar Jha',
+'position': 'Group VP - Enterprise Sales',
+'organisation': 'Netcore Solutions',
+'image': 'https://cache.careers360.mobi/media/colleges/alumni/Saket_Kumar_Jha.jpeg?w=48&h=48',
+'batch': None,
+'branch': None,
+'achievement': None},
+{'name': 'Vivek Sharma',
+'position': 'Partner',
+'organisation': None,
+'image': 'https://cache.careers360.mobi/media/colleges/alumni/Vivek_Sharma.jpeg?w=48&h=48',
+'batch': None,
+'branch': None,
+'achievement': None},
+{'name': 'Bindeshwari Dubey',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': None,
+'branch': None,
+'achievement': 'Former Chief Minister of Bihar'},
+{'name': 'Ratan Kumar Sinha',
+'position': 'Chairman, Atomic Energy Commission of India (AEC); Secretary, Department of Atomic Energy (DAE)',
+'organisation': None,
+'image': None,
+'batch': None,
+'branch': None,
+'achievement': None},
+{'name': 'P. A. (Purno Agitok) Sangma',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': None,
+'branch': None,
+'achievement': 'Former Chief Minister of Meghalaya'},
+{'name': 'Bhubaneswar Behera',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': None,
+'branch': None,
+'achievement': 'Engineer, writer and scholar'},
+{'name': 'Manas Bihari Verma',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': None,
+'branch': None,
+'achievement': 'Indian aeronautical scientist'},
+{'name': 'N. K. Sarasdar',
+'position': 'Retired professor of the institute',
+'organisation': None,
+'image': None,
+'batch': 1958,
+'branch': None,
+'achievement': None},
+{'name': 'Arun Kumar',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': 1969,
+'branch': None,
+'achievement': None},
+{'name': 'Deepak Prakash',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': 1994,
+'branch': None,
+'achievement': None},
+{'name': 'Chakradhar Narayan',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': 1959,
+'branch': None,
+'achievement': 'Felicitated — diamond jubilee'},
+{'name': 'Sheo Pujan',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': 1959,
+'branch': None,
+'achievement': 'Felicitated — diamond jubilee'},
+{'name': 'Umeshwar Prasad',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': 1959,
+'branch': None,
+'achievement': 'Felicitated — diamond jubilee'},
+{'name': 'Krishna Deo',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': 1959,
+'branch': None,
+'achievement': 'Felicitated — diamond jubilee'},
+{'name': 'Awadh Kishory',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': 1959,
+'branch': None,
+'achievement': 'Felicitated — diamond jubilee'},
+{'name': 'Gopal Rao',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': 1959,
+'branch': None,
+'achievement': 'Felicitated — diamond jubilee'},
+{'name': 'Rameshwar Prasad',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': 1959,
+'branch': None,
+'achievement': 'Felicitated — diamond jubilee'},
+{'name': 'Rajendra Gupta',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': 1959,
+'branch': None,
+'achievement': 'Felicitated — diamond jubilee'},
+{'name': 'Akansha Sachdeva',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': 2018,
+'branch': 'BTech, Civil Engineering',
+'achievement': 'Topper'},
+{'name': 'Shivans Singh',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': 2018,
+'branch': 'BTech, Computer Science & Engineering',
+'achievement': 'Topper'},
+{'name': 'Kumar Piyush',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': 2018,
+'branch': 'BTech, Electronics & Communications Engineering',
+'achievement': 'Topper'},
+{'name': 'Vishal Verma',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': 2018,
+'branch': 'BTech, Electrical Engineering',
+'achievement': 'Topper'},
+{'name': 'Chitranjan Kumar Jha',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': 2018,
+'branch': 'BTech, Mechanical Engineering',
+'achievement': 'Topper'},
+{'name': 'Piyush Kumar Singh',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': 2018,
+'branch': 'MTech, Civil Engineering',
+'achievement': 'Topper'},
+{'name': 'Nikhil Nigam',
+'position': None,
+'organisation': None,
+'image': None,
+'batch': 2016,
+'branch': 'B.Tech., Electrical Engineering',
+'achievement': 'Completed Higher Education'}]
         }
 
     @staticmethod
     def get_scholarships(college_id: int) -> dict:
         """Get scholarships information"""
         return {
-            "scholarships": [
-                {"id": "sch1", "name": "Merit Scholarship", "amount": "INR 50,000", "eligibility": "Top 10% in entrance", "description": "Awarded to high-performing entrants.", "deadline": "2025-08-31"},
-                {"id": "sch2", "name": "Need-based Aid", "amount": "INR 30,000", "eligibility": "Family income < INR 8 lakhs", "description": "Supports students from low-income families.", "deadline": "2025-09-15", "applyLink": "https://www.nita.edu.in/scholarships/need-based"}
-            ]
+            'scholarships': [{'name': 'Notification for the National Scholarship - Academic Year 2025-2026',
+  'benefits': [],
+  'eligibility': [],
+  'description': 'Provides scholarship support for students for the 2025-2026 academic year.',
+  'deadline': None,
+  'referenceLink': 'https://www.nitp.ac.in/Student/Scholarship'},
+ {'name': 'Notification for National Fellowship and Scholarship for Higher Education of ST Students for the Academic Year 2025-2026',
+  'benefits': [],
+  'eligibility': [],
+  'description': "Provides fellowship and scholarships for ST students' higher education in 2025-2026.",
+  'deadline': None,
+  'referenceLink': 'https://www.nitp.ac.in/Student/Scholarship'},
+ {'name': 'NIT Patna Scholarships (merit-cum-means basis)',
+  'benefits': [],
+  'eligibility': ['Needy students on merit-cum-means basis'],
+  'description': 'Provide financial aid to needy students based on merit and means.',
+  'deadline': None,
+  'referenceLink': 'https://www.collegedekho.com/colleges/nit-patna-scholarship'},
+ {'name': 'Minority scholarship for meritorious minority students sponsored by the Minority Commission of Ranchi, Jharkhand',
+  'benefits': ['Rs. 17,000'],
+  'eligibility': ['Meritorious minority students'],
+  'description': 'Financial award for meritorious minority students.',
+  'deadline': None,
+  'referenceLink': 'https://www.collegedekho.com/colleges/nit-patna-scholarship'},
+ {'name': 'Odisha SC/ST Development Board Scholarship (for NIT Patna)',
+  'benefits': ['Rs. 49,780'],
+  'eligibility': ['Meritorious SC and ST students'],
+  'description': 'Financial support for meritorious SC and ST students.',
+  'deadline': None,
+  'referenceLink': 'https://www.collegedekho.com/colleges/nit-patna-scholarship'},
+ {'name': 'IOCL Scholarship for Scheduled Caste candidates',
+  'benefits': ['More than Rs. 1,00,000'],
+  'eligibility': ['Scheduled Caste candidates'],
+  'description': 'Financial scholarship for Scheduled Caste candidates.',
+  'deadline': None,
+  'referenceLink': 'https://www.collegedekho.com/colleges/nit-patna-scholarship'},
+ {'name': 'Various state and central government scholarships (25+ schemes mentioned)',
+  'benefits': [],
+  'eligibility': [],
+  'description': 'Government-sponsored scholarships offering student financial assistance.',
+  'deadline': None,
+  'referenceLink': 'https://www.collegedekho.com/colleges/nit-patna-scholarship'}]
         }
 
     @staticmethod
@@ -1378,11 +1851,274 @@ class CollegeService:
     def get_startups(college_id: int) -> dict:
         """Get college startups information"""
         return {
-            "startups": [
-                {"id": "st1", "name": "EduTech Pro", "founder": "Rahul Sharma (2020 batch)", "description": "AI-powered learning platform", "funding": "$2M Series A", "image": "https://picsum.photos/seed/startup1/400/400"},
-                {"id": "st2", "name": "GreenEnergy Solutions", "founder": "Priya Mehta (2019 batch)", "description": "Solar panel efficiency optimizer", "funding": "$500K Seed", "image": "https://picsum.photos/seed/startup2/400/400"},
-                {"id": "st3", "name": "HealthConnect", "founder": "Amit Verma (2021 batch)", "description": "Telemedicine platform for rural areas", "funding": "$1M Angel", "image": "https://picsum.photos/seed/startup3/400/400"}
+        "startups": [
+            {
+            "startup_name": "Ather Energy",
+            "description": "Electric scooter manufacturer headquartered in Bengaluru, India.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/67c820b712d3f9eac839c0d6_67c0169dff8d1640b179ea59_ather-logo-1.png",
+            "tags": [
+                "Manufacturing"
             ]
+            },
+            {
+            "startup_name": "Darwinbox",
+            "description": "HR software company offering AI-powered SaaS solutions.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/677774ea33e0905a2ce6629e_66ece191ff13a3911958ce5b_thedarwinbox_logo%2520(1).jpeg",
+            "tags": [
+                "AI",
+                "Software",
+                "SaaS"
+            ]
+            },
+            {
+            "startup_name": "EaseMyTrip",
+            "description": "Online travel booking platform based in New Delhi.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/677774ecfc5985eb0379d5fe_66d80383c4a7a00f4fc20772_easemytrip_com_logo%2520sq.jpeg",
+            "tags": [
+                "Travel"
+            ]
+            },
+            {
+            "startup_name": "HighRadius",
+            "description": "Cloud-based treasury and finance automation software provider.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/677774f296e04ee61ed1b8c3_66e9ab56f1db83ebb12ee901_highradius_logo.jpeg",
+            "tags": [
+                "Software"
+            ]
+            },
+            {
+            "startup_name": "OfBusiness",
+            "description": "B2B e-commerce platform for business loans and procurement.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/677774fccff5d687145afe91_66e3b60384a62b477943652e_1631308480506.jpeg",
+            "tags": [
+                "B2B",
+                "Finance"
+            ]
+            },
+            {
+            "startup_name": "Perplexity AI",
+            "description": "AI-powered search and answer engine for users.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/677774fee6eeb2b64ce49831_66d7f44dbfa3994bd1ee4091_perplexity_ai_logo.jpeg",
+            "tags": [
+                "AI"
+            ]
+            },
+            {
+            "startup_name": "Rubrik",
+            "description": "Cloud data management and backup security platform.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/67777503e4ccf0c35c97c4b6_66e2c44bd67fe858c761fa27_rubrik_inc_logo.jpeg",
+            "tags": [
+                "Software"
+            ]
+            },
+            {
+            "startup_name": "SUGAR Cosmetics",
+            "description": "Direct-to-consumer beauty and cosmetics brand in India.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/67c820e05a398dc81eaf5cdd_67c01735a9dc6902362c35e7_sugar_cosmetics_logo.jpeg",
+            "tags": [
+                "FMCG"
+            ]
+            },
+            {
+            "startup_name": "Swiggy",
+            "description": "Online food delivery and logistics platform in India.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/6777750767bc7ca53dd53999_66d805c22a3c691e2b8d468f_swiggy_in_logo.jpeg",
+            "tags": [
+                "Logistics"
+            ]
+            },
+            {
+            "startup_name": "Urban Ladder",
+            "description": "Online furniture and home d\u00e9cor e-commerce platform.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/6777750d4a45a843d577fda9_66e3b8871e42960a2e9c0426_urban_ladder_logo.jpeg",
+            "tags": [
+                "Interiors"
+            ]
+            },
+            {
+            "startup_name": "Zetwerk",
+            "description": "B2B manufacturing marketplace connecting buyers with factories.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/67777513fb1b840b2c09f1bf_66e3b7a6b955c165784c5dd3_zetwerk_in_logo.jpeg",
+            "tags": [
+                "Manufacturing"
+            ]
+            },
+            {
+            "startup_name": "Zoho",
+            "description": "Cloud-based suite of business productivity and CRM.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/67777513fb1b840b2c09f204_66e2c53c1324195ec6f3928d_zoho_logo.jpeg",
+            "tags": [
+                "Software",
+                "SaaS"
+            ]
+            },
+            {
+            "startup_name": "AmbitionBox",
+            "description": "Company reviews and salary insights platform for professionals.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/677774de62f5fe498fabd331_66d7faa246daee056e722619_ambition_box_logo.jpeg",
+            "tags": [
+                "Internet"
+            ]
+            },
+            {
+            "startup_name": "CleverTap",
+            "description": "Customer engagement and analytics platform for mobile businesses.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/677774e5a2c527caaad530ad_66d7faaf040da82e419d060c_clevertap_logo.jpeg",
+            "tags": [
+                "Software",
+                "SaaS"
+            ]
+            },
+            {
+            "startup_name": "Clueso",
+            "description": "Conversational AI platform delivering contextual user experiences.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/677774e6d5d29a63f891cf6b_66d7fabc1a2bf9c9c81f63fc_clueso_logo.jpeg",
+            "tags": [
+                "Software",
+                "SaaS"
+            ]
+            },
+            {
+            "startup_name": "CoreVoice",
+            "description": "Consulting services focused on voice technology solutions.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/677774e9ac0b508c34b587b6_66d7fb5553161a5e930bf23d_corevoice_logo.jpeg",
+            "tags": [
+                "Consulting"
+            ]
+            },
+            {
+            "startup_name": "HyperVerge",
+            "description": "AI-based image and video recognition technology provider.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/677774f3d2deebfe71893009_66d7fb0e442363e0981edddd_hyperverge_inc__logo.jpeg",
+            "tags": [
+                "Software"
+            ]
+            },
+            {
+            "startup_name": "Internshala",
+            "description": "Online internship and training platform for students.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/677774f5a1bdece29af53ea0_66d6f3a41cb41a42fc5a8dc5_5.jpeg",
+            "tags": [
+                "EdTech"
+            ]
+            },
+            {
+            "startup_name": "Planys Technologies",
+            "description": "Autonomous underwater vehicle and subsea inspection solutions.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/67c820d7a5246ab393349a11_67c017b76c5f3c51d73322a5_planys-technologies-squarelogo-1558681940014.webp",
+            "tags": [
+                "Engg"
+            ]
+            },
+            {
+            "startup_name": "Tiger Analytics",
+            "description": "Advanced analytics and AI consulting for enterprises.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/67c820e886fb7be12e562efc_67c01809ec778c3b7467d272_favicon-Tiger-Analytics_.webp",
+            "tags": [
+                "Consulting",
+                "AI"
+            ]
+            },
+            {
+            "startup_name": "Wishup Technologies",
+            "description": "Remote assistants and virtual staffing solutions for businesses.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/67777511978a64e0381b372d_66d7fb2eebca15ace2333c88_wishup_services_logo.jpeg",
+            "tags": [
+                "Consulting"
+            ]
+            },
+            {
+            "startup_name": "Zouk",
+            "description": "Direct-to-consumer fashion and lifestyle brand from Mumbai.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/67777514167bcd9f7494b182_66f95bb6e9c9fbe56729e835_xouk.jpeg",
+            "tags": [
+                "D2C"
+            ]
+            },
+            {
+            "startup_name": "0xytocin Labs",
+            "description": "Blockchain and Web3 product development and innovation lab.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/67777514167bcd9f7494b182_66f95bb6e9c9fbe56729e835_xouk.jpeg",
+            "tags": [
+                "Internet"
+            ]
+            },
+            {
+            "startup_name": "4AM Digital",
+            "description": "Digital marketing and advertising agency based in Mumbai.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/677774db64a7158f3d8ec080_66d7fc1051f4e338a09e5485_1630626216141.jpeg",
+            "tags": [
+                "Ads/Media"
+            ]
+            },
+            {
+            "startup_name": "99x Studio",
+            "description": "Product design and UX-focused digital studio in Bengaluru.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/677774db64a7158f3d8ec07c_67477d1ac5e142b66a3e2de8_99xstartup_logo.jpeg",
+            "tags": [
+                "Design"
+            ]
+            },
+            {
+            "startup_name": "Ashwatta",
+            "description": "Sustainable water management and climate resilience solutions provider.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/686c92926178e1b9a1340801_ashwatta_logo.jpg",
+            "tags": [
+                "ClimateTech"
+            ]
+            },
+            {
+            "startup_name": "Cambridge Mobile Telematics",
+            "description": "Mobile telematics and insurance analytics using smartphone sensors.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/677774e4fb1b840b2c09d943_671935dcc49fc05109cee615_cambridge_mobile_telematics_logo.jpeg",
+            "tags": [
+                "Software"
+            ]
+            },
+            {
+            "startup_name": "Eazybe",
+            "description": "Enterprise SaaS solutions for business process automation.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/677774ec64a7158f3d8eca8d_66d7fb3e100260bb86ac6d4f_eazybe_logo.jpeg",
+            "tags": [
+                "Software",
+                "SaaS"
+            ]
+            },
+            {
+            "startup_name": "GalaxEye",
+            "description": "Spacetech company building satellite and space hardware solutions.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/677774f064a7158f3d8ecc73_66d7fc8f21ddba530322a496_1695474495454.jpeg",
+            "tags": [
+                "Space",
+                "Manufacturing"
+            ]
+            },
+            {
+            "startup_name": "InCore Semiconductors",
+            "description": "Semiconductor design house developing analog and power ICs.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/677774f4ea4f6b56dd9cc85f_66d7fb5ebfa3994bd1f55d18_incoresemi_logo.jpeg",
+            "tags": [
+                "Semicon",
+                "Manufacturing"
+            ]
+            },
+            {
+            "startup_name": "Pragya Cyber Private Limited",
+            "description": "Cybersecurity software and services across India and US.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/686cad56482d52bf6463a938_1701433827859.jpg",
+            "tags": [
+                "Software"
+            ]
+            },
+            {
+            "startup_name": "Riverline",
+            "description": "Software company building developer tools and cloud services.",
+            "image": "https://cdn.prod.website-files.com/6669fc0ac53c6773c4f2f246/684fffa9d24d0904649acea2_hq3YReZr5F5irph5zcPgbGhD6pI.avif",
+            "tags": [
+                "Software"
+            ]
+            }
+        ]
         }
 
     @staticmethod
@@ -1403,10 +2139,35 @@ class CollegeService:
         """Get nearby places information"""
         return {
             "places": [
-                {"id": "p1", "name": "Metro Station", "distance": "2 km", "type": "Transport"},
-                {"id": "p2", "name": "City Mall", "distance": "3.5 km", "type": "Shopping"},
-                {"id": "p3", "name": "Central Hospital", "distance": "1.5 km", "type": "Healthcare"},
-                {"id": "p4", "name": "Public Library", "distance": "4 km", "type": "Education"},
-                {"id": "p5", "name": "Food Court", "distance": "2.5 km", "type": "Dining"}
+                {'name': "Elliot's Beach",
+                'category': 'Beach',
+                'distance': '~6.5 km'},
+                {'name': 'Besant Nagar',
+                'category': 'Neighbourhood/shoreline',
+                'distance': '~5 km'},
+                {'name': 'Theosophical Society',
+                'category': 'Historic garden/campus',
+                'distance': '~3 km'},
+                {'name': 'Kalakshetra Foundation',
+                'category': 'Cultural academy (dance & crafts)',
+                'distance': '~4 km'},
+                {'name': 'Phoenix Marketcity',
+                'category': 'Shopping mall',
+                'distance': '~6 km'},
+                {'name': 'Marina Beach',
+                'category': 'Beach/landmark',
+                'distance': '~8-10 km'},
+                {'name': 'Kapaleeshwarar Temple',
+                'category': 'Temple',
+                'distance': '~7-8 km'},
+                {'name': 'Semmozhi Poonga',
+                'category': 'Botanical garden',
+                'distance': '~5 km'},
+                {'name': 'Express Avenue',
+                'category': 'Shopping mall',
+                'distance': '~8-9 km'},
+                {'name': 'Guindy National Park / Snake Park',
+                'category': 'Urban national park',
+                'distance': '~4 km'}
             ]
         }
