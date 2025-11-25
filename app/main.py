@@ -9,21 +9,21 @@ from app.api.v1.api import api_router
 from app.core.config import settings
 from app.db.mongo import connect_to_mongo, close_mongo_connection
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    # Startup
-    print("🔄 Connecting to MongoDB...")
-    try:
-        await connect_to_mongo()
-        print("✅ MongoDB connection established successfully!")
-    except Exception as e:
-        print(f"❌ Failed to connect to MongoDB: {e}")
-        raise
-    yield
-    # Shutdown
-    print("🔄 Closing MongoDB connection...")
-    await close_mongo_connection()
-    print("✅ MongoDB connection closed successfully!")
+# @asynccontextmanager
+# async def lifespan(app: FastAPI):
+#     # Startup
+#     print("🔄 Connecting to MongoDB...")
+#     try:
+#         await connect_to_mongo()
+#         print("✅ MongoDB connection established successfully!")
+#     except Exception as e:
+#         print(f"❌ Failed to connect to MongoDB: {e}")
+#         raise
+#     yield
+#     # Shutdown
+#     print("🔄 Closing MongoDB connection...")
+#     await close_mongo_connection()
+#     print("✅ MongoDB connection closed successfully!")
 
 app = FastAPI(
     title="Educational Website API",
@@ -31,7 +31,7 @@ app = FastAPI(
     version="1.0.0",
     docs_url="/docs",
     redoc_url="/redoc",
-    lifespan=lifespan
+    # lifespan=lifespan
 )
 
 # CORS middleware
